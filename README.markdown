@@ -14,11 +14,11 @@ Example
 -------
 
 	class ProjectsController < ApplicationController
-		before_filter :subdomain_account_required
+	  before_filter :subdomain_account_required
 		
-		def index
-			render :text => current_account.subdomain
-		end
+	  def index
+	    render :text => current_account.subdomain
+	  end
 	end
 
 
@@ -37,22 +37,22 @@ Request Methods
 
 	# Request http://test.example.com:8080/home
 	class HomeController < ApplicationController
-		def index
-			# returns 'example.com:8080'
-			request.domain_with_port
+	  def index
+	    # returns 'example.com:8080'
+	    request.domain_with_port
 	
-			# returns 'test.example.com'
-			request.host_with_subdomain
+	    # returns 'test.example.com'
+	    request.host_with_subdomain
 			
-			# returns 'testing.example.com'
-			request.host_with_subdomain('testing')
+	    # returns 'testing.example.com'
+	    request.host_with_subdomain('testing')
 	
-			# returns 'example.com'
-			request.host_without_subdomain
+	    # returns 'example.com'
+	    request.host_without_subdomain
 	
-			returns 'test'
-			request.subdomain
-		end
+	    returns 'test'
+	    request.subdomain
+	  end
 	end
 
 
