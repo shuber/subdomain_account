@@ -4,7 +4,7 @@ module Huberry
 			def self.extended(base)
 				base.class_eval do
 					include InstanceMethods
-					include AuthenticationPatch if included_modules.collect{|mod| mod.to_s}.include? 'Huberry::Authentication::ControllerMethods::InstanceMethods'
+					include AuthenticationPatch if included_modules.collect(&:to_s).include? 'Huberry::Authentication::ControllerMethods::InstanceMethods'
 
 					cattr_accessor :subdomain_account_model, :subdomain_field
 					self.subdomain_account_model = 'Account'
@@ -24,14 +24,17 @@ module Huberry
 						end
 						self.current_account
           end
+					
+					def subdomain_account_not_found
+						respond_to do |format|
+							format.html { render :file => "#{RAILS_ROOT}/public/404.html", :status => 404 }
+							format.all { render :nothing => true, :status => 404 }
+						end
+						false
+					end
 
 					def subdomain_account_required
-						if find_current_account.nil?
-							respond_to do |format|
-								format.html { render :file => "#{RAILS_ROOT}/public/404.html", :status => 404 }
-								format.all { render :nothing => true, :status => 404 }
-							end
-						end
+						subdomain_account_not_found if find_current_account.nil?
 					end
 			end
 			
