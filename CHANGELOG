@@ -1,7 +1,10 @@
-2008-06-05 - Sean Huber (shuber@einsteinindustries.com)
+2008-06-05 - Sean Huber (shuber@huberry.com)
+  * Changed email addresses in CHANGELOG
+
+2008-06-05 - Sean Huber (shuber@huberry.com)
   * Moved render 404 logic into subdomain_account_not_found method for easy overwriting
 
-2008-06-05 - Sean Huber (shuber@einsteinindustries.com)
+2008-06-05 - Sean Huber (shuber@huberry.com)
   * Renamed test files
   * Added request tests
   * Added more controller tests
