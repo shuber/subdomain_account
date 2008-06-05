@@ -35,6 +35,25 @@ class ActionController::Routing::RouteSet
 	end
 end
 
+# Include Huberry::Authentication::ControllerMethods mock to test AuthenticationPatch
+#
+module Huberry
+	module Authentication
+		module ControllerMethods
+			module InstanceMethods
+				def self.included(base)
+					base.class_eval do
+						cattr_accessor :authentication_model
+						self.authentication_model = 'User'
+						attr_accessor :current_user
+					end
+				end
+			end
+		end
+	end
+end
+ActionController::Base.send :include, Huberry::Authentication::ControllerMethods::InstanceMethods
+
 # Require the main init.rb for the plugin
 #
 require File.join(File.dirname(File.dirname(__FILE__)), 'init')

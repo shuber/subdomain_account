@@ -1,3 +1,8 @@
+2008-06-05 - Sean Huber (shuber@einsteinindustries.com)
+  * Renamed test files
+  * Added request tests
+  * Added more controller tests
+
 2008-06-05 - Sean Huber (shuber@huberry.com)
   * Initial import from access_control_list repository
   * subdomain field is configurable

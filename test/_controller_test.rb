@@ -11,6 +11,8 @@ end
 class TestController < ActionController::Base
 	before_filter :subdomain_account_required, :only => :account_required
 	
+	attr_accessor :current_user
+	
 	def account_required
 		render :text => 'test'
 	end
@@ -29,7 +31,7 @@ ActionController::Routing::Routes.append do |map|
 	map.connect 'account_not_required', :controller => 'test', :action => 'account_not_required'
 end
 
-class FunctionalTest < Test::Unit::TestCase
+class ControllerTest < Test::Unit::TestCase
 	
 	def setup
 		create_accounts_table
@@ -42,6 +44,9 @@ class FunctionalTest < Test::Unit::TestCase
     @request    = ActionController::TestRequest.new
     @response   = ActionController::TestResponse.new
 
+		@request.host = "#{@account.subdomain}.localhost.com"
+
+		@controller.instance_variable_set('@_request', @request)
 		@controller.instance_variable_set('@_session', @request.session)
   end
   
@@ -50,7 +55,6 @@ class FunctionalTest < Test::Unit::TestCase
   end
 
 	def test_should_get_account_required
-		@request.host = "#{@account.subdomain}.localhost.com"
 		get :account_required, :format => 'xml'
 		assert_response :success
 	end
@@ -68,6 +72,28 @@ class FunctionalTest < Test::Unit::TestCase
 		@request.host = 'invalid.localhost.com'
 		get :account_required, :format => 'xml'
 		assert_response :not_found
+	end
+	
+	def test_find_current_user_with_valid_user
+		@request.session[:user_id] = @user.id
+		assert_equal @user, @controller.send(:find_current_user)
+	end
+	
+	def test_find_current_user_with_nil_user
+		assert_nil @controller.send(:find_current_user)
+	end
+	
+	def test_find_current_user_with_invalid_user
+		@request.session[:user_id] = 2
+		assert_nil @controller.send(:find_current_user)
+	end
+	
+	def test_find_current_user_force_query
+		assert_nil @controller.send(:find_current_user)
+		
+		@request.session[:user_id] = @user.id
+		assert_nil @controller.send(:find_current_user)
+		assert_equal @user, @controller.send(:find_current_user, true)
 	end
 	
 end
