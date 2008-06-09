@@ -5,10 +5,9 @@ module Huberry
 				domain(tld_length) + port_string
 			end
 			
-			def host_with_subdomain(sub = subdomain)
-				parts = host.split('.')
-				parts[0] = sub if parts.size > 2
-				parts.join('.')
+			def host_with_subdomain(sub = subdomain, tld_length = 1)
+				result = sub.nil? ? '' : "#{sub}."
+				result << domain_with_port(tld_length)
 			end
 			
 			def host_without_subdomain

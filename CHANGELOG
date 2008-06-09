@@ -1,3 +1,6 @@
+2008-06-09 - Sean Huber (shuber@einsteinindustries.com)
+  * Updated host_with_subdomain request method
+
 2008-06-05 - Sean Huber (shuber@huberry.com)
   * Added .gitignore
 
