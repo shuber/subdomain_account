@@ -28,7 +28,8 @@ Controller Methods
 	# Returns the current account or nil if one is not found
 	current_account
 	
-	# A before filter to require a subdomain - renders a 404 if one is not found (overwrite subdomain_account_not_found to change this behavior)
+	# A before filter to require a subdomain - renders a 404 if one is not found
+	# (overwrite subdomain_account_not_found to change this behavior)
 	subdomain_account_required
 
 
@@ -50,7 +51,7 @@ Request Methods
 	    # returns 'example.com'
 	    request.host_without_subdomain
 	
-	    returns 'test'
+	    # returns 'test'
 	    request.subdomain
 	  end
 	end
