@@ -43,8 +43,7 @@ module Huberry
         def find_current_user(force_query = false)
           if @queried_for_current_user.nil? || force_query
             @queried_for_current_user = true
-            underscored_authentication_model = self.class.authentication_model.to_s.underscore
-            self.current_user = find_current_account.send(underscored_authentication_model.pluralize.to_sym).find(session["#{underscored_authentication_model}_id".to_sym]) rescue nil
+            self.current_user = find_current_account.send(self.class.authentication_options[:model].to_s.underscore.pluralize.to_sym).find(session[authentication_session_field]) rescue nil
           end
           self.current_user
         end

@@ -42,10 +42,14 @@ module Huberry
       module InstanceMethods
         def self.included(base)
           base.class_eval do
-            cattr_accessor :authentication_model
-            self.authentication_model = 'User'
+            cattr_accessor :authentication_options
+            self.authentication_options = { :model => 'User' }
             attr_accessor :current_user
           end
+        end
+        
+        def authentication_session_field
+          :user_id
         end
       end
     end

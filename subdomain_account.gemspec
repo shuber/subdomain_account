@@ -1,6 +1,6 @@
 Gem::Specification.new do |s| 
   s.name    = 'subdomain_account'
-  s.version = '1.0.0'
+  s.version = '1.0.1'
   s.date    = '2009-01-09'
   
   s.summary     = 'A rails gem/plugin that handles subdomain accounts'
