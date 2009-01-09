@@ -4,6 +4,7 @@
   * Convert to soft tabs
   * Convert tests to soft tabs
   * Update CHANGELOG to present tense
+  * Add subdomain_account_options cattr_accessor to store options
 
 2008-06-12 - Sean Huber (shuber@huberry.com)
 	* Update README
