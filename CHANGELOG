@@ -3,21 +3,22 @@
   * Remove .gitignore
   * Convert to soft tabs
   * Convert tests to soft tabs
+  * Update CHANGELOG to present tense
 
 2008-06-12 - Sean Huber (shuber@huberry.com)
-	* Updated README
+	* Update README
 
 2008-06-09 - Sean Huber (shuber@huberry.com)
-  * Updated host_with_subdomain request method
+  * Update host_with_subdomain request method
 
 2008-06-05 - Sean Huber (shuber@huberry.com)
   * Initial import from access_control_list repository
   * subdomain field is configurable
-  * Renamed test files
-  * Added request tests
-  * Added more controller tests
-  * Moved render 404 logic into subdomain_account_not_found method for easy overwriting
-  * Changed email addresses in CHANGELOG
-  * Added more request tests
-  * Updated README
-  * Added .gitignore
+  * Rename test files
+  * Add request tests
+  * Add more controller tests
+  * Move render 404 logic into subdomain_account_not_found method for easy overwriting
+  * Change email addresses in CHANGELOG
+  * Add more request tests
+  * Update README
+  * Add .gitignore
