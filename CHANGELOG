@@ -6,6 +6,7 @@
   * Update CHANGELOG to present tense
   * Add subdomain_account_options cattr_accessor to store options
   * Remove request logic and tests
+  * Rename _controller_test.rb to subdomain_account_test.rb
 
 2008-06-12 - Sean Huber (shuber@huberry.com)
 	* Update README

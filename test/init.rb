@@ -1,4 +1,3 @@
-$:.reject! { |path| path.include? 'TextMate' }
 require 'test/unit'
 
 # Require and include test helpers

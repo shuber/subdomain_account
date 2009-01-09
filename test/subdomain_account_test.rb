@@ -31,7 +31,7 @@ ActionController::Routing::Routes.append do |map|
   map.connect 'account_not_required', :controller => 'test', :action => 'account_not_required'
 end
 
-class ControllerTest < Test::Unit::TestCase
+class SubdomainAccountTest < Test::Unit::TestCase
   
   def setup
     create_accounts_table
