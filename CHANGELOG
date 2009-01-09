@@ -8,6 +8,7 @@
   * Remove request logic and tests
   * Rename _controller_test.rb to subdomain_account_test.rb
   * Update README
+  * Gemify
 
 2008-06-12 - Sean Huber (shuber@huberry.com)
 	* Update README

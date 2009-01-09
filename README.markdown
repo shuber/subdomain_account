@@ -1,12 +1,14 @@
 subdomain\_account
 ==================
 
-A rails plugin that handles subdomain accounts
+A rails gem/plugin that handles subdomain accounts
 
 
 Installation
 ------------
 
+	gem install shuber-subdomain_account --source http://gems.github.com
+	OR
 	script/plugin install git://github.com/shuber/subdomain_account.git
 
 
