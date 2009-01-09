@@ -1,4 +1,4 @@
-2009-01-09 - Sean Huber (shuber@einsteinindustries.com)
+2009-01-09 - Sean Huber (shuber@huberry.com)
   * Clean up CHANGELOG
   * Remove .gitignore
   * Convert to soft tabs
@@ -9,6 +9,7 @@
   * Rename _controller_test.rb to subdomain_account_test.rb
   * Update README
   * Gemify
+  * Update CHANGELOG email
 
 2008-06-12 - Sean Huber (shuber@huberry.com)
 	* Update README
