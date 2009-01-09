@@ -1,5 +1,6 @@
 2009-01-09 - Sean Huber (shuber@einsteinindustries.com)
   * Clean up CHANGELOG
+  * Remove .gitignore
 
 2008-06-12 - Sean Huber (shuber@huberry.com)
 	* Updated README
