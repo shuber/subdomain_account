@@ -33,8 +33,8 @@ this by modifying the controller's `subdomain_account_options` attribute like so
 	  self.subdomain_account_options.merge!(:model => Company, :field => :username)
 	end
 
-When a subdomain is required but the `current_account` was not found, the controller calls the `subdomain_account_not_found` method 
-which simply renders a 404. You can overwrite this method to change this behavior.
+When a subdomain is required but the `current_account` was not found, the controller calls the `subdomain_account_not_found` instance 
+method which simply renders a 404. You can overwrite this method to change this behavior.
 
 
 Contact
