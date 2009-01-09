@@ -2,6 +2,7 @@
   * Clean up CHANGELOG
   * Remove .gitignore
   * Convert to soft tabs
+  * Convert tests to soft tabs
 
 2008-06-12 - Sean Huber (shuber@huberry.com)
 	* Updated README

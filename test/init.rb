@@ -29,28 +29,28 @@ require 'action_controller/test_process'
 # Routing
 #
 class ActionController::Routing::RouteSet
-	def append
+  def append
     yield Mapper.new(self)
     install_helpers
-	end
+  end
 end
 
 # Include Huberry::Authentication::ControllerMethods mock to test AuthenticationPatch
 #
 module Huberry
-	module Authentication
-		module ControllerMethods
-			module InstanceMethods
-				def self.included(base)
-					base.class_eval do
-						cattr_accessor :authentication_model
-						self.authentication_model = 'User'
-						attr_accessor :current_user
-					end
-				end
-			end
-		end
-	end
+  module Authentication
+    module ControllerMethods
+      module InstanceMethods
+        def self.included(base)
+          base.class_eval do
+            cattr_accessor :authentication_model
+            self.authentication_model = 'User'
+            attr_accessor :current_user
+          end
+        end
+      end
+    end
+  end
 end
 ActionController::Base.send :include, Huberry::Authentication::ControllerMethods::InstanceMethods
 
