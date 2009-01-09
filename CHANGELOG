@@ -1,3 +1,6 @@
+2009-01-09 - Sean Huber (shuber@einsteinindustries.com)
+  * Clean up CHANGELOG
+
 2008-06-12 - Sean Huber (shuber@huberry.com)
 	* Updated README
 
@@ -5,28 +8,13 @@
   * Updated host_with_subdomain request method
 
 2008-06-05 - Sean Huber (shuber@huberry.com)
-  * Added .gitignore
-
-2008-06-05 - Sean Huber (shuber@huberry.com)
-  * Updated README
-
-2008-06-05 - Sean Huber (shuber@huberry.com)
-  * Updated README
-
-2008-06-05 - Sean Huber (shuber@huberry.com)
-  * Added more request tests
-
-2008-06-05 - Sean Huber (shuber@huberry.com)
-  * Changed email addresses in CHANGELOG
-
-2008-06-05 - Sean Huber (shuber@huberry.com)
-  * Moved render 404 logic into subdomain_account_not_found method for easy overwriting
-
-2008-06-05 - Sean Huber (shuber@huberry.com)
+  * Initial import from access_control_list repository
+  * subdomain field is configurable
   * Renamed test files
   * Added request tests
   * Added more controller tests
-
-2008-06-05 - Sean Huber (shuber@huberry.com)
-  * Initial import from access_control_list repository
-  * subdomain field is configurable
+  * Moved render 404 logic into subdomain_account_not_found method for easy overwriting
+  * Changed email addresses in CHANGELOG
+  * Added more request tests
+  * Updated README
+  * Added .gitignore
