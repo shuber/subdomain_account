@@ -5,6 +5,7 @@
   * Convert tests to soft tabs
   * Update CHANGELOG to present tense
   * Add subdomain_account_options cattr_accessor to store options
+  * Remove request logic and tests
 
 2008-06-12 - Sean Huber (shuber@huberry.com)
 	* Update README

@@ -37,30 +37,6 @@ When a subdomain is required but the `current_account` was not found, the contro
 which simply renders a 404. You can overwrite this method to change this behavior.
 
 
-Request Methods
----------------
-
-	# Request http://test.example.com:8080/home
-	class HomeController < ApplicationController
-	  def index
-	    # returns 'example.com:8080'
-	    request.domain_with_port
-	
-	    # returns 'test.example.com'
-	    request.host_with_subdomain
-			
-	    # returns 'testing.example.com'
-	    request.host_with_subdomain('testing')
-	
-	    # returns 'example.com'
-	    request.host_without_subdomain
-	
-	    # returns 'test'
-	    request.subdomain
-	  end
-	end
-
-
 Contact
 -------
 
